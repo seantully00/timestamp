@@ -7,7 +7,7 @@ var moment = require('moment');
 
   
 
-app.get('https://sttimestamp.herokuapp.com/*', function(res, req) {
+app.get('/:time', function(res, req) {
     var urlObj = url.parse(req.url, true),
       pathname = urlObj.pathname;
       var date = new Date(pathname);
