@@ -1,9 +1,12 @@
+'use strict';
+
 var express = require('express');
 var app = express();
 var url = require('url');
 var http = require('http');
 var unix, natural, data;
 var moment = require('moment');
+var port = process.env.PORT || 8080;  
 
   
 
@@ -26,6 +29,6 @@ app.get('/:time', function(req, res) {
 
 
 
-app.listen(8080, function () {
+app.listen(port, function () {
   console.log('App listening on port 8080!');
 });
