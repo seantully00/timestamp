@@ -11,7 +11,12 @@ var port = process.env.PORT || 8080;
   
 
 app.get('/:time', function(req, res) {
-    var urlObj = url.parse(req.url, true),
+    var urlObj = url.parse(req.url, true);
+    var pathname = urlObj.path.split('');
+	pathname.shift();
+	pathname = pathname.join('');
+	pathname = pathname.replace(/%20/, ' ').replace(/%20/, ' ');
+    
       pathname = urlObj.pathname;
       var date = new Date(pathname);
       if (isNaN(Number(pathname)) && date != 'Invalid Date') {
