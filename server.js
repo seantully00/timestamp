@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var url = require('url');
 var http = require('http');
-var unix, natural;
+var unix, natural, data;
 var moment = require('moment');
 
   
@@ -19,7 +19,7 @@ app.get('/:time', function(res, req) {
 		unix = pathname;
 	}
 	else { natural = null; unix = null; } 
-	let data = {"unix": unix, "natural": natural};
+	data = {"unix": unix, "natural": natural};
 	res.write(JSON.stringify(data));
 	res.end();
 })
