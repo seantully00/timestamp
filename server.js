@@ -16,8 +16,6 @@ app.get('/:time', function(req, res) {
 	pathname.shift();
 	pathname = pathname.join('');
 	pathname = pathname.replace(/%20/, ' ').replace(/%20/, ' ');
-    
-      pathname = urlObj.pathname;
       var date = new Date(pathname);
       if (isNaN(Number(pathname)) && date != 'Invalid Date') {
           natural = pathname;
